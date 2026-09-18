@@ -56,7 +56,7 @@ impl AppState {
 fn get_cache_file_path() -> PathBuf {
     let mut path =
         PathBuf::from(std::env::var("LOCALAPPDATA").unwrap_or_else(|_| "C:\\".to_string()));
-    path.push("VersionDetector"); // 自动在 Local 下创建的文件夹名
+    path.push("VersionDetector");
     fs::create_dir_all(&path).unwrap_or_default();
     path.push("versiondetector.json");
     path
